@@ -11,3 +11,9 @@ Lmanagement_system/src/main/java/com/system/management_system/users/user.java,7
 Lmanagement_system/src/main/java/com/system/management_system/users/User.java,4\d\4da985c831e8d0c4e63092702ffaf6031ca2c15b
 †
 Vmanagement_system/src/main/java/com/system/management_system/users/UserRepository.java,e\d\ed0086a1d2f5413f755370af30c7dfbb41ac8f40
+‹
+[management_system/src/main/java/com/system/management_system/controller/UserController.java,b\9\b9c5538aa8f2d0881d42e8fb1a82d0d07e2b9cba
+†
+Vmanagement_system/src/main/java/com/system/management_system/users/UserRequestDTO.java,6\2\624430b78a50ff978afeb97adab6307205f4fb95
+‡
+Wmanagement_system/src/main/java/com/system/management_system/users/UserResponseDTO.java,8\3\8341670f6e004d1a95eb1000f3181ff850265189

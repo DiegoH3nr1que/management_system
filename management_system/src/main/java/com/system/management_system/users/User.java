@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Table(name = "users")
-@Entity(name = "users")
+@Entity(name = "management_system")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +25,10 @@ public class User {
 
     private String password;
 
-
-
+    public User(UserRequestDTO data) {
+        this.name = data.name();
+        this.username = data.username();
+        this.email = data.email();
+        this.password = data.password();
+    }
 }
