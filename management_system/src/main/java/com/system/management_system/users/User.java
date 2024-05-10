@@ -1,5 +1,6 @@
 package com.system.management_system.users;
 
+import com.system.management_system.wallet.WalletRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
