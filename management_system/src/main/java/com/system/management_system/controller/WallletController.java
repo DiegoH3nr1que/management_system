@@ -25,6 +25,12 @@ public class WallletController {
     public void SaveUsewallet(@RequestBody WalletRequestDTO data){
         Wallet WalletData = new Wallet(data);
         repository.save(WalletData);
+        WalletData.updateBalance(WalletData.getBalance());
+        List<Wallet> userWallets = repository.findByUsername(WalletData.getUsername());
+        for (Wallet wallet : userWallets) {
+            wallet.recalculateBalance(userWallets);
+            repository.save(wallet);
+        }
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -33,5 +39,4 @@ public class WallletController {
         List<WalletResponseDTO> walletList = repository.findAll().stream().map(WalletResponseDTO::new).toList();
         return walletList;
     }
-
 }

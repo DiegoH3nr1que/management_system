@@ -3,8 +3,6 @@
 ]management_system/src/main/java/com/system/management_system/ManagementSystemApplication.java,7\9\79093f2ddd8a2c9d068e29ffa1cd45799c138b50
 ’
 bmanagement_system/src/test/java/com/system/management_system/ManagementSystemApplicationTests.java,1\7\1764d0dd285ea12772b5fde943fb45a143b5c917
-_
-/management_system/src/main/java/users/User.java,9\d\9ddffcc8eae36b64a047c5b0e7eb03fe0e14d82c
 |
 Lmanagement_system/src/main/java/com/system/management_system/users/user.java,7\3\734870da32a25ae1d512d23fd641f04823b23960
 |
@@ -29,3 +27,5 @@ Ymanagement_system/src/main/java/com/system/management_system/wallet/WalletRepos
 Ymanagement_system/src/main/java/com/system/management_system/wallet/WalletRequestDTO.java,9\6\96e14712b52c50c0ed6fe673f4bbfeb651fad3ee
 Š
 Zmanagement_system/src/main/java/com/system/management_system/wallet/WalletResponseDTO.java,f\0\f0b5d1b0f566efaa7e8abc772f5dacbf8500abcb
+‰
+Ymanagement_system/src/main/java/com/system/management_system/exception/ExceptionUser.java,8\c\8ca6b55eb408c4a90f4215812d5ca2190a25481f

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,16 +17,15 @@ public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String username;
 
-
-//    Realizei um teste sobre esse atributo  date of create e ainda não está funcionando 100%
-//    Estou tentando fazer com que esse atributo seja inserido automatico ao criar um wallet
     @Temporal(TemporalType.DATE)
     @Column(name = "date_of_create")
     private Date date_of_create;
 
     private double balance;
+
+    private double balance_final;
 
     @PrePersist
     protected void onCreate() {
@@ -33,7 +33,21 @@ public class Wallet {
     }
 
     public Wallet(WalletRequestDTO data) {
-        this.name = data.name();
+        this.username = data.username();
         this.balance = data.balance();
+    }
+
+    public void updateBalance(double amount) {
+        this.balance_final += amount;
+    }
+
+    public void recalculateBalance(List<Wallet> wallets) {
+        double totalBalance = 0.0;
+        for (Wallet wallet : wallets) {
+            if (wallet.getUsername().equals(this.username)) {
+                totalBalance += wallet.getBalance();
+            }
+        }
+        this.balance_final = totalBalance;
     }
 }
