@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Table(name = "users")
+@Table(name = "users", schema = "public")
 @Entity(name = "management_system")
 public class User {
     @Id

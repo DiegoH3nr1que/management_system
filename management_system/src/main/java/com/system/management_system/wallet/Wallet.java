@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Table(name = "wallet")
+@Table(name = "wallet", schema = "public")
 @Entity(name = "wallet")
 public class Wallet {
     @Id
@@ -18,22 +18,20 @@ public class Wallet {
     private Long id;
     private String name;
 
-
-//    Realizei um teste sobre esse atributo  date of create e ainda não está funcionando 100%
-//    Estou tentando fazer com que esse atributo seja inserido automatico ao criar um wallet
-    @Temporal(TemporalType.DATE)
     @Column(name = "date_of_create")
-    private Date date_of_create;
+    private Date dateOfCreate;
 
     private double balance;
 
     @PrePersist
     protected void onCreate() {
-        this.date_of_create = new Date();
+        this.dateOfCreate = new Date();
     }
+
 
     public Wallet(WalletRequestDTO data) {
         this.name = data.name();
+        this.dateOfCreate = data.date_of_create();
         this.balance = data.balance();
     }
 }
